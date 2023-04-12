@@ -6,6 +6,9 @@ export default {
   component: Input,
 } as Meta<typeof Input>;
 
-const Template: StoryFn<typeof Input> = () => <Input/>;
+const Template: StoryFn<typeof Input> = (args) => <Input {...args}/>;
 
 export const InputTest = Template.bind({});
+InputTest.args = {
+  label: "테스트"
+}
