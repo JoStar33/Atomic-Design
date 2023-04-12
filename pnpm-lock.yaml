@@ -6,6 +6,7 @@ specifiers:
   '@storybook/addon-links': 7.0.3
   '@storybook/addon-styling': ^1.0.0
   '@storybook/blocks': 7.0.3
+  '@storybook/builder-webpack5': ^7.0.3
   '@storybook/nextjs': 7.0.3
   '@storybook/react': 7.0.3
   '@storybook/testing-library': 0.0.14-next.2
@@ -25,7 +26,9 @@ specifiers:
   postcss-loader: ^7.2.4
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.8.0
   storybook: 7.0.3
+  styled-jsx: ^5.1.2
   tailwindcss: 3.3.1
   typescript: 5.0.4
 
@@ -43,6 +46,8 @@ dependencies:
   next: 13.3.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.8.0_react@18.2.0
+  styled-jsx: 5.1.2_react@18.2.0
   tailwindcss: 3.3.1_postcss@8.4.21
   typescript: 5.0.4
 
@@ -52,6 +57,7 @@ devDependencies:
   '@storybook/addon-links': 7.0.3_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-styling': 1.0.0_bjkmmf33ai7shx3545iybv37we
   '@storybook/blocks': 7.0.3_biqbaboplfbrettd7655fr4n2y
+  '@storybook/builder-webpack5': 7.0.3_tvrvbu6r5w7oyqiu4bvze3slou
   '@storybook/nextjs': 7.0.3_xnqcuoouvoa2otbvwgl7u2bk5i
   '@storybook/react': 7.0.3_tvrvbu6r5w7oyqiu4bvze3slou
   '@storybook/testing-library': 0.0.14-next.2
@@ -9585,6 +9591,14 @@ packages:
       react-is: 18.1.0
     dev: true
 
+  /react-icons/4.8.0_react@18.2.0:
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-inspector/6.0.1_react@18.2.0:
     resolution: {integrity: sha512-cxKSeFTf7jpSSVddm66sKdolG90qURAX3g1roTeaN6x0YEbtWc8JpmFN9+yIqLNH2uEkYerWLtJZIXRIFuBKrg==}
     peerDependencies:
@@ -10338,6 +10352,23 @@ packages:
     dependencies:
       client-only: 0.0.1
       react: 18.2.0
+
+  /styled-jsx/5.1.2_react@18.2.0:
+    resolution: {integrity: sha512-FI5r0a5ED2/+DSdG2ZRz3a4FtNQnKPLadauU5v76a9QsscwZrWggQKOmyxGGP5EWKbyY3bsuWAJYzyKaDAVAcw==}
+    engines: {node: '>= 12.0.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      babel-plugin-macros: '*'
+      react: '>= 16.8.0 || 17.x.x || ^18.0.0-0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      babel-plugin-macros:
+        optional: true
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+    dev: false
 
   /sucrase/3.32.0:
     resolution: {integrity: sha512-ydQOU34rpSyj2TGyz4D2p8rbktIOZ8QY9s+DGLvFU1i5pWJE8vkpruCjGCMHsdXwnD7JDcS+noSwM/a7zyNFDQ==}
