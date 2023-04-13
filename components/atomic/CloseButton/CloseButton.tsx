@@ -1,15 +1,14 @@
-import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 interface Props {
-  close: () => {}
+  close: () => void;
 }
 
-const CloseButton = () => {
+const CloseButton = ({close}: Props) => {
   return (
-    <>
-      <AiOutlineCloseCircle onClick={close} style={{width: '2vw', height: '2vw', position: 'relative'}}/>
-    </>
+    <button className='absolute top-0 right-0 w-10 h-10 flex justify-center items-center'>
+      <AiOutlineCloseCircle onClick={close} size={20} color='black'/>
+    </button>
   );
 };
 
