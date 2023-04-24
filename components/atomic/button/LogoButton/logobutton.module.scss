@@ -1,0 +1,14 @@
+@import "styles/mixins.scss";
+
+.logobutton {
+  @include button;
+  min-width: 9rem;
+  figure {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    img {
+      border-radius: 100px;
+    }
+  }
+}
