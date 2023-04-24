@@ -1,4 +1,5 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import styles from './closebutton.module.scss';
 
 interface Props {
   close: () => void;
@@ -6,8 +7,8 @@ interface Props {
 
 const CloseButton = ({close}: Props) => {
   return (
-    <button className='absolute top-0 right-0 w-10 h-10 flex justify-center items-center'>
-      <AiOutlineCloseCircle onClick={close} size={20} color='black'/>
+    <button className={styles.close_button}>
+      <AiOutlineCloseCircle onClick={close} color='black'/>
     </button>
   );
 };

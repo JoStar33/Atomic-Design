@@ -6,6 +6,6 @@ export default {
   component: CloseButton,
 } as Meta<typeof CloseButton>;
 
-const Template: StoryFn<typeof CloseButton> = (args) => <div className='w-96 h-96 relative bg-slate-300'><CloseButton {...args}/></div>;
+const Template: StoryFn<typeof CloseButton> = (args) => <div style={{width: "300px", height: "300px", backgroundColor: "skyblue", position: "relative"}}><CloseButton {...args}/></div>;
 
 export const CloseButtonTest = Template.bind({});

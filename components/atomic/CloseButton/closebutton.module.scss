@@ -1,0 +1,15 @@
+@import '@/styles/mixins.scss';
+
+.close_button {
+  @include center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  svg {
+    width: 2vw;
+    height: 2vw;
+  }
+}
