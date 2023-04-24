@@ -1,0 +1,5 @@
+@import '@/styles/mixins.scss';
+
+.minus_button {
+  @include counter_controll_button;
+}
