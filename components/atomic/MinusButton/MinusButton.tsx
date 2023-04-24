@@ -1,4 +1,4 @@
-import { BsFillArrowDownCircleFill } from 'react-icons/bs';
+import { AiOutlineArrowDown } from 'react-icons/ai';
 import styles from './minusbutton.module.scss';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 const MinusButton = ({ minusController }: Props) => {
   return (
     <button className={styles.minus_button} onClick={minusController}>
-      <BsFillArrowDownCircleFill/>
+      <AiOutlineArrowDown/>
     </button>
   );
 };
