@@ -1,0 +1,14 @@
+.input_title {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.input {
+  font-size: 1.4rem;
+  border-radius: 5px;
+  border: 2px solid black;
+  outline: none;
+  &:focus {
+    border: #6597f1 solid 3px;
+  }
+}

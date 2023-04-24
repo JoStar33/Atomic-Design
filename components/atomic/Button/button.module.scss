@@ -1,0 +1,11 @@
+@import "styles/mixins.scss";
+
+.button {
+  border: 0.5px solid black;
+  background-color: white;
+  @include button;
+  transition: all 0.2s;
+  &:hover {
+    background-color: #E7E7E8;
+  }
+}

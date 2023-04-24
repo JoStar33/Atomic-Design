@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from "./button.module.scss";
 
 interface Props {
   label: string;
@@ -7,7 +7,7 @@ interface Props {
 
 const Button = ({label, clickEvent}: Props) => {
   return (
-    <button className='bg-sky-100 text-xl rounded-lg pr-4 pl-4 pt-2 pb-2 font-black' onClick={clickEvent}>
+    <button className={styles.button} onClick={clickEvent}>
       {
         label
       }
