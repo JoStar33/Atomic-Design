@@ -39,11 +39,17 @@
     "@storybook/blocks": "7.0.3",
     "@storybook/builder-webpack5": "^7.0.3",
     "@storybook/nextjs": "7.0.3",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "7.0.3",
     "@storybook/testing-library": "0.0.14-next.2",
     "autoprefixer": "10.4.14",
-    "postcss": "8.4.21",
-    "postcss-loader": "^7.2.4",
-    "storybook": "7.0.3"
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "msw": "^1.1.0",
+    "msw-storybook-addon": "^1.8.0",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2",
+    "storybook": "7.0.3",
+    "style-loader": "^3.3.2"
   }
 }

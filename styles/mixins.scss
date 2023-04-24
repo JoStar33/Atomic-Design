@@ -1,0 +1,25 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  @include center();
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+@mixin counter_controll_button {
+  @include center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  svg {
+    width: 4vw;
+    height: 4vw;
+  }
+}
