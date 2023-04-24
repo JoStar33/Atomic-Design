@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import CloseButton from './CloseButton';
 
 export default {
-  title: '컴포넌트/아토믹/CloseButton',
+  title: '컴포넌트/아토믹/버튼/CloseButton',
   component: CloseButton,
 } as Meta<typeof CloseButton>;
 
