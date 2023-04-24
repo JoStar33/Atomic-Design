@@ -1,3 +1,6 @@
+import { BsPlusCircle } from 'react-icons/bs';
+import styles from './registbutton.module.scss';
+
 interface Props {
   text: string;
   regist: () => void;
@@ -5,7 +8,8 @@ interface Props {
 
 const RegistButton = ({text, regist}: Props) => {
   return (
-    <button className="rounded-xl bg-rose-100 text-white font-extrabold p-2" onClick={regist}>
+    <button className={styles.regist_button} onClick={regist}>
+      <BsPlusCircle/>
       {
         text
       }

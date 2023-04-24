@@ -1,0 +1,10 @@
+@import '@/styles/mixins.scss';
+
+.regist_button {
+  background-color: white;
+  @include button;
+  svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+}
