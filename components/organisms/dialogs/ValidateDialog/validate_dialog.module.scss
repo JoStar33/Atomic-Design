@@ -1,0 +1,21 @@
+@import '@/styles/mixins.scss';
+
+.dialog_background {
+  @include center;
+  position: fixed;
+  top: 0vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  z-index: 9999;
+  .dialog_container {
+    @include center;
+    max-width: 14rem;
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
