@@ -1,10 +1,12 @@
+import styles from './textbox.module.scss';
+
 interface Props {
   text: string;
 }
 
 const TextBox = ({text}: Props) => {
   return (
-    <div className='p-8 min-w-fit'>
+    <div className={styles.textbox}>
       {
         text
       }
