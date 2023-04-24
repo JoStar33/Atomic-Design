@@ -9,6 +9,8 @@
   border: none;
   cursor: pointer;
   svg {
+    min-width: 1rem;
+    min-height: 1rem;
     width: 2vw;
     height: 2vw;
   }
