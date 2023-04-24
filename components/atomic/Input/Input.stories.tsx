@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import Input from '../Input/Input';
+import Input from './Input';
 
 export default {
   title: '컴포넌트/아토믹/Input',

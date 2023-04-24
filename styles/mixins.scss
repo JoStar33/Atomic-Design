@@ -33,3 +33,19 @@
     box-shadow: none;
   }
 }
+
+
+@mixin card {
+  @include center;
+  flex-direction: column;
+  padding: 1vw;
+  width: 10vw;
+  border-radius: 13px;
+  box-shadow: 0 6px 6px 0 gray;
+  cursor: pointer;
+  figure {
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+  }
+}
