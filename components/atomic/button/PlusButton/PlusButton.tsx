@@ -2,12 +2,12 @@ import { AiOutlineArrowUp } from 'react-icons/ai';
 import styles from './plusbutton.module.scss';
 
 interface Props {
-  minusController: () => void;
+  plusController: () => void;
 }
 
-const PlusButton = ({minusController}: Props) => {
+const PlusButton = ({plusController}: Props) => {
   return (
-    <button className={styles.plus_button} onClick={minusController}>
+    <button className={styles.plus_button} onClick={plusController}>
       <AiOutlineArrowUp/>
     </button>
   );
