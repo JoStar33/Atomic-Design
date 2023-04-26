@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { AiFillFolder, AiFillHome } from 'react-icons/ai';
+import { DiReact } from 'react-icons/di';
 import TopMenuBar from './TopMenuBar';
 
 export default {
@@ -19,5 +20,9 @@ TopMenuBarTest.args = {
     id: "2", 
     icon: <AiFillFolder/>, 
     label: "파일조회"
+  }, {
+    id: "3",
+    icon: <DiReact/>,
+    label: "리액트"
   }]
 }
