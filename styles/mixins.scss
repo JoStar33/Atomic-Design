@@ -28,9 +28,9 @@
     width: 6vw;
     height: 100%;
   }
-  &:hover {
-    margin-top: 10px;
-    margin-bottom: 5px;
+  &:active {
+    margin-top: 16px;
+    margin-bottom: 0px;
     box-shadow: none;
   }
 }
