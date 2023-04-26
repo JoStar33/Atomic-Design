@@ -1,0 +1,6 @@
+@import '@/styles/mixins.scss';
+
+.agreement_card {
+  @include card;
+  width: 20rem;
+}

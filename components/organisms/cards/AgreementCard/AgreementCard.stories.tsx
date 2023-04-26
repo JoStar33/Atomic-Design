@@ -1,12 +1,27 @@
+import { DialogContext } from '@/utils/DialogContext';
 import { Meta, StoryFn } from '@storybook/react';
+import { useRef, useState } from 'react';
+import ValidateDialog from '../../dialogs/ValidateDialog/ValidateDialog';
 import AgreementCard from './AgreementCard';
 
 export default {
   title: '컴포넌트/조직/일반/AgreementCard',
   component: AgreementCard,
 } as Meta<typeof AgreementCard>;
-
-const Template: StoryFn<typeof AgreementCard> = (args) => <AgreementCard {...args}/>;
+const Template: StoryFn<typeof AgreementCard> = (args) => {
+  const dialogText = useRef<string>('');
+  const [dialogShow, setDialogShow] = useState<boolean>(false);
+  const setDialog = (text: string, isShow: boolean) => {
+    setDialogShow(isShow);
+    dialogText.current = text;
+  }
+  return (
+    <DialogContext.Provider value={{setDialog}}>
+      <ValidateDialog dialogShow={dialogShow} dialogText={dialogText.current} handleDialog={() => setDialogShow(false)}/>
+      <AgreementCard {...args}/>
+    </DialogContext.Provider>
+  )
+}
 
 export const AgreementCardTest = Template.bind({});
 AgreementCardTest.args = {

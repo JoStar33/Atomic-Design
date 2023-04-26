@@ -13,6 +13,7 @@ if (typeof global.process === "undefined") {
   worker.start(); // worker starts!
 }
 
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
