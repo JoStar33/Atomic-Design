@@ -12,3 +12,9 @@ export const InputTest = Template.bind({});
 InputTest.args = {
   label: "테스트"
 }
+
+export const PasswordInputTest = Template.bind({});
+PasswordInputTest.args = {
+  label: "비밀번호",
+  isPassword: true
+}

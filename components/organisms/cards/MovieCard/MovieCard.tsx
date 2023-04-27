@@ -1,4 +1,4 @@
-import TextBox from "@/components/atomic/TextBox/TextBox";
+import TextBox from "@/components/atomic/commons/TextBox/TextBox";
 import Image from "next/image";
 import styles from './moviecard.module.scss';
 

@@ -1,15 +1,14 @@
+import { RefObject } from 'react';
 import styles from './input.module.scss';
 
 interface Props {
   label: string;
+  isPassword?: boolean;
   placeholder: string;
-  setValue: (value: string) => {};
+  valueRef: RefObject<HTMLInputElement>;
 }
 
-const Input = ({ label, placeholder, setValue }: Props) => {
-  const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  }
+const Input = ({isPassword = false, label, placeholder, valueRef }: Props) => {
   return (
     <div>
       <label
@@ -20,8 +19,8 @@ const Input = ({ label, placeholder, setValue }: Props) => {
       </label>
       <div className="mt-2.5">
         <input
-          onChange={handleClick}
-          type="text"
+          ref={valueRef}
+          type={isPassword ? "password" : "text"}
           placeholder={placeholder}
           className={styles.input}
         />
