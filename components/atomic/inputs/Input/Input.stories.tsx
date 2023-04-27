@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import Input from './Input';
 
 export default {
-  title: '컴포넌트/아토믹/Input',
+  title: '컴포넌트/아토믹/인풋/Input',
   component: Input,
 } as Meta<typeof Input>;
 

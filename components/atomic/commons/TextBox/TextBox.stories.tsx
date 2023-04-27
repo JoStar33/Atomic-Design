@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import TextBox from './TextBox';
 
 export default {
-  title: '컴포넌트/아토믹/TextBox',
+  title: '컴포넌트/아토믹/일반/TextBox',
   component: TextBox,
 } as Meta<typeof TextBox>;
 

@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import Star from './Star';
 
 export default {
-  title: '컴포넌트/아토믹/Star',
+  title: '컴포넌트/아토믹/일반/Star',
   component: Star,
 } as Meta<typeof Star>;
 

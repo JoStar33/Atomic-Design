@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import CheckBox from './CheckBox';
 
 export default {
-  title: '컴포넌트/아토믹/CheckBox',
+  title: '컴포넌트/아토믹/일반/CheckBox',
   component: CheckBox,
 } as Meta<typeof CheckBox>;
 
