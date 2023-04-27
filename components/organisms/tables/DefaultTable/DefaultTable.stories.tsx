@@ -8,6 +8,15 @@ export default {
 
 const Template: StoryFn<typeof DefaultTable> = (args) => <DefaultTable {...args}/>;
 
+const initTableRows = [
+  {
+    id: "23",
+    title: "안녕",
+    content: "내용입니다.",
+    information: "정보입니다."
+  }
+]
+
 export const DefaultTableTest = Template.bind({});
 DefaultTableTest.args = {
   tableData: {
@@ -16,12 +25,21 @@ DefaultTableTest.args = {
       content: "내용",
       information: "정보"
     },
-    tableRow: [
-      {
-        title: "안녕",
-        content: "내용입니다.",
-        information: "정보입니다."
-      }
-    ]
+    tableRow: initTableRows
+  }
+}
+
+export const DefaultTableClickTest = Template.bind({});
+DefaultTableClickTest.args = {
+  tableData: {
+    tableHeader: {
+      title: "제목",
+      content: "내용",
+      information: "정보"
+    },
+    tableRow: initTableRows
+  },
+  rowClick: (id: string) => {
+    console.log(id);
   }
 }

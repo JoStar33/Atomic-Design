@@ -5,9 +5,10 @@ import styles from './default_table.module.scss';
 interface Props {
   tableTitle?: string;
   tableData: TableData;
+  rowClick?: (id: string) => void;
 }
 
-const DefaultTable = ({tableTitle, tableData}: Props) => {
+const DefaultTable = ({tableTitle, tableData, rowClick = () => {}}: Props) => {
   return (
     <div>
       <table className={styles.default_table}>
@@ -17,7 +18,7 @@ const DefaultTable = ({tableTitle, tableData}: Props) => {
         </thead>
         <tbody>
           {
-            tableData.tableRow.map(row => <TableRow key={row.id} row={row}/>)
+            tableData.tableRow.map(row => <TableRow key={row.id} row={row} rowClick={() => rowClick(row.id)}/>)
           }
         </tbody>
       </table>
