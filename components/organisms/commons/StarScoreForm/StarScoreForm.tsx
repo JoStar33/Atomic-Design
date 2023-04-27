@@ -2,9 +2,8 @@ import Star from '@/components/atomic/Star/Star';
 import { useState } from 'react';
 import styles from './star_score_form.module.scss';
 
-
-const StarScoreForm = () => {
-  const [starScore, setStarScore] = useState<Star[]>([{
+const initStar: Star[] = [
+  {
     id: 1,
     score: 0,
   }, {
@@ -19,7 +18,11 @@ const StarScoreForm = () => {
   }, {
     id: 5,
     score: 0,
-  }]);
+  }
+]
+
+const StarScoreForm = () => {
+  const [starScore, setStarScore] = useState<Star[]>(initStar);
   const setClikedStar = (star: Star) => {
     if(star.score === 0){
       star.score = 1;
@@ -36,7 +39,7 @@ const StarScoreForm = () => {
     return star;
   }
   const handleStar = (starId: number) => {
-    setStarScore(starScore.map((star) => {
+    setStarScore(starScore.map(star => {
       if(star.id < starId) {
         star.score = 1;
       }
@@ -53,7 +56,7 @@ const StarScoreForm = () => {
   return (
     <div className={styles.star_score_form_container}>
       {
-        starScore.map((star) => 
+        starScore.map(star => 
           <Star key={star.id} score={star.score} handleClick={() => handleStar(star.id)}/>)
       }
     </div>
