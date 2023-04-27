@@ -1,4 +1,4 @@
-import Star from '@/components/atomic/Star/Star';
+import Star from '@/components/atomic/commons/Star/Star';
 import { useState } from 'react';
 import styles from './star_score_form.module.scss';
 

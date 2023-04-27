@@ -1,5 +1,5 @@
-import CheckBox from "@/components/atomic/CheckBox/CheckBox";
 import Button from "@/components/atomic/button/Button/Button";
+import CheckBox from "@/components/atomic/commons/CheckBox/CheckBox";
 import { DialogContext } from "@/utils/DialogContext";
 import { useContext, useState } from "react";
 import styles from './agreement_card.module.scss';
