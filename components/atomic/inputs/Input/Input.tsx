@@ -12,13 +12,14 @@ const Input = ({isPassword = false, label, placeholder, valueRef }: Props) => {
   return (
     <div>
       <label
-        htmlFor="last-name"
+        htmlFor="input"
         className={styles.input_title}
       >
         {label}
       </label>
       <div className="mt-2.5">
         <input
+          id="input"
           ref={valueRef}
           type={isPassword ? "password" : "text"}
           placeholder={placeholder}
