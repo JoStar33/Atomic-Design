@@ -17,7 +17,7 @@ const Input = ({isPassword = false, label, placeholder, valueRef }: Props) => {
       >
         {label}
       </label>
-      <div className="mt-2.5">
+      <div>
         <input
           id="input"
           ref={valueRef}
