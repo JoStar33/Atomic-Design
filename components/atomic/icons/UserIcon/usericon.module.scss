@@ -1,0 +1,14 @@
+.user_icon {
+  display: flex;
+  justify-content: flex-start;
+  width: 10vw;
+  figure {
+    cursor: pointer;
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    img {
+      border-radius: 100vw;
+    }
+  }
+}
