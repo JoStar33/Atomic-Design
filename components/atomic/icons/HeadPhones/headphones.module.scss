@@ -1,0 +1,63 @@
+@mixin ear_cover {
+  z-index: 8;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  height: 100px;
+  width: 0;
+}
+
+.headphones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.headphone_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 100px;
+  .ear_cushion {
+    background-color: white;
+    z-index: 8;
+    border-radius: 100px;
+    width: 30px;
+    height: 200px;
+    border: 2px solid black;
+  }
+  
+  .ear_cover {
+    &__left {
+      @include ear_cover;
+      border-right: 100px solid gray;
+    }
+    &__right {
+      @include ear_cover;
+      border-left: 100px solid gray;
+    }
+  }
+}
+
+.headphone_bridge__main {
+  position: absolute;
+  bottom: 250px;
+  .headphone_bridge {
+    position: relative;
+    background-color: gray;
+    width: 400px; 
+    height: 200px; 
+    border-radius: 200px 200px 0 0;
+    &__child {
+      position: absolute;
+      bottom: 0px;
+      left: 25px;
+      background-color: white;
+      width: 350px; 
+      height: 175px; 
+      border-radius: 175px 175px 0 0;
+    }
+  }
+}
