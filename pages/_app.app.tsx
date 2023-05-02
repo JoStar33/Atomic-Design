@@ -1,4 +1,4 @@
-import ValidateDialog from '@/components/organisms/dialogs/ValidateDialog/ValidateDialog';
+import ValidateDialog from '@/components/molecules/dialogs/ValidateDialog/ValidateDialog';
 import { DialogContext } from '@/utils/DialogContext';
 import type { AppProps } from 'next/app';
 import { useRef, useState } from 'react';
