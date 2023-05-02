@@ -1,4 +1,4 @@
-import MenuButton from "@/components/atomic/button/MenuButton/MenuButton";
+import MenuButton from "@/components/atoms/button/MenuButton/MenuButton";
 import styles from './topmenubar.module.scss';
 
 interface Props {
