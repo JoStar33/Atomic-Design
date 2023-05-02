@@ -1,5 +1,5 @@
-import CloseButton from '@/components/atomic/button/CloseButton/CloseButton';
-import TextBox from '@/components/atomic/commons/TextBox/TextBox';
+import CloseButton from '@/components/atoms/button/CloseButton/CloseButton';
+import TextBox from '@/components/atoms/commons/TextBox/TextBox';
 import styles from './validate_dialog.module.scss';
 
 interface Props {

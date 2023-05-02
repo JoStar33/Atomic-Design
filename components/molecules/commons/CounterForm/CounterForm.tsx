@@ -1,5 +1,5 @@
-import MinusButton from "@/components/atomic/button/MinusButton/MinusButton";
-import PlusButton from "@/components/atomic/button/PlusButton/PlusButton";
+import MinusButton from "@/components/atoms/button/MinusButton/MinusButton";
+import PlusButton from "@/components/atoms/button/PlusButton/PlusButton";
 import { useState } from "react";
 import styles from './counter_form.module.scss';
 

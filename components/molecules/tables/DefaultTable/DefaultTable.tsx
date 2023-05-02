@@ -1,5 +1,5 @@
-import TableHeader from "@/components/atomic/tables/TableHeader/TableHeader";
-import TableRow from "@/components/atomic/tables/TableRow/TableRow";
+import TableHeader from "@/components/atoms/tables/TableHeader/TableHeader";
+import TableRow from "@/components/atoms/tables/TableRow/TableRow";
 import styles from './default_table.module.scss';
 
 interface Props {
