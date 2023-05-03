@@ -6,6 +6,6 @@ export default {
   component: Toggle,
 } as Meta<typeof Toggle>;
 
-const Template: StoryFn<typeof Toggle> = () => <Toggle/>;
+const Template: StoryFn<typeof Toggle> = (args) => <Toggle {...args}/>;
 
 export const ToggleTest = Template.bind({});
