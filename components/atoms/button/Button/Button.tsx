@@ -2,12 +2,12 @@ import styles from "./button.module.scss";
 
 interface Props {
   label: string;
-  clickEvent: () => void;
+  handleClick: () => void;
 }
 
-const Button = ({label, clickEvent}: Props) => {
+const Button = ({label, handleClick}: Props) => {
   return (
-    <button className={styles.button} onClick={clickEvent}>
+    <button className={styles.button} onClick={handleClick}>
       {
         label
       }

@@ -1,4 +1,4 @@
-import { DialogContext } from '@/utils/DialogContext';
+import { Context } from '@/utils/Context';
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useRef, useState } from 'react';
@@ -29,10 +29,10 @@ const AgreementContainer = () => {
     dialogText.current = text;
   }
   return (
-    <DialogContext.Provider value={{setDialog}}>
+    <Context.Provider value={{setDialog}}>
       <ValidateDialog dialogShow={dialogShow} dialogText={dialogText.current} handleDialog={() => setDialogShow(false)}/>
       <AgreementCard initAgreement={initAgreement}/>
-    </DialogContext.Provider>
+    </Context.Provider>
   );
 }
 

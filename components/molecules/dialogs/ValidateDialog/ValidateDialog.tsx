@@ -15,7 +15,7 @@ const ValidateDialog = ({dialogShow, dialogText, handleDialog}: Props) => {
         dialogShow &&
         <div className={styles.dialog_background}>
           <div className={styles.dialog_container}>
-            <CloseButton close={handleDialog}/>
+            <CloseButton handleClick={handleDialog}/>
             <TextBox text={dialogText} />
           </div>
         </div>

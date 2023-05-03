@@ -15,8 +15,8 @@ const CounterForm = () => {
   return (
     <div className={styles.counter_form}>
       <h2>{ count }</h2>
-      <PlusButton plusController={() => plusController()}/>
-      <MinusButton minusController={() => minusController()}/>
+      <PlusButton handleClick={() => plusController()}/>
+      <MinusButton handleClick={() => minusController()}/>
     </div>
   );
 };

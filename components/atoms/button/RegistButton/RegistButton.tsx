@@ -3,12 +3,12 @@ import styles from './registbutton.module.scss';
 
 interface Props {
   text: string;
-  regist: () => void;
+  handleClick: () => void;
 } 
 
-const RegistButton = ({text, regist}: Props) => {
+const RegistButton = ({text, handleClick}: Props) => {
   return (
-    <button className={styles.regist_button} onClick={regist}>
+    <button className={styles.regist_button} onClick={handleClick}>
       <BsPlusCircle/>
       {
         text

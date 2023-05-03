@@ -2,12 +2,12 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 import styles from './minusbutton.module.scss';
 
 interface Props {
-  minusController: () => void;
+  handleClick: () => void;
 }
 
-const MinusButton = ({ minusController }: Props) => {
+const MinusButton = ({ handleClick }: Props) => {
   return (
-    <button role='minus-button' className={styles.minus_button} onClick={minusController}>
+    <button role='minus-button' className={styles.minus_button} onClick={handleClick}>
       <AiOutlineArrowDown/>
     </button>
   );

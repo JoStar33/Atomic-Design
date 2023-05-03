@@ -1,5 +1,5 @@
 import ValidateDialog from '@/components/molecules/dialogs/ValidateDialog/ValidateDialog';
-import { DialogContext } from '@/utils/DialogContext';
+import { Context } from '@/utils/Context';
 import type { AppProps } from 'next/app';
 import { useRef, useState } from 'react';
 import '../styles/globals.scss';
@@ -12,9 +12,9 @@ export default function App({ Component, pageProps }: AppProps) {
     dialogText.current = text;
   }
   return (
-    <DialogContext.Provider value={{setDialog}}>
+    <Context.Provider value={{setDialog}}>
       <ValidateDialog dialogShow={dialogShow} dialogText={dialogText.current} handleDialog={() => setDialogShow(false)}/>
       <Component {...pageProps} />
-    </DialogContext.Provider>
+    </Context.Provider>
   );
 }

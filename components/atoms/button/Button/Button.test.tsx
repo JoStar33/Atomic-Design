@@ -10,7 +10,7 @@ describe("아토믹/버튼/Button 테스트", () => {
     const pushNewElement = (number: number) => {
       array.push(number);
     }
-    render(<Button label={"테스트 버튼"} clickEvent={() => pushNewElement(2)}/>);
+    render(<Button label={"테스트 버튼"} handleClick={() => pushNewElement(2)}/>);
     const testButton = screen.getByText(/테스트 버튼/); 
     await user.click(testButton);
     expect(array.includes(2)).toBeTruthy();

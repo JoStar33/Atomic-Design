@@ -3,12 +3,12 @@ import styles from "./menubutton.module.scss";
 interface Props {
   icon: React.ReactNode;
   label: string;
-  click: () => void;
+  handleClick: () => void;
 }
 
-const MenuButton = ({ icon, label, click }: Props) => {
+const MenuButton = ({ icon, label, handleClick }: Props) => {
   return (
-    <div className={styles.menu_button} onClick={click}>
+    <div className={styles.menu_button} onClick={handleClick}>
       {icon}
       {label}
     </div>

@@ -1,6 +1,6 @@
 import Button from "@/components/atoms/button/Button/Button";
 import CheckBox from "@/components/atoms/commons/CheckBox/CheckBox";
-import { DialogContext } from "@/utils/DialogContext";
+import { Context } from "@/utils/Context";
 import { useContext, useState } from "react";
 import styles from './agreement_card.module.scss';
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const AgreementCard = ({ initAgreement }: Props) => {
-  const { setDialog } = useContext(DialogContext);
+  const { setDialog } = useContext(Context);
   const [agreement, setAgreement] = useState<Agreement[]>(initAgreement);
   const isChecked = (value: boolean, id: string) => {
     setAgreement(
@@ -40,7 +40,7 @@ const AgreementCard = ({ initAgreement }: Props) => {
       </div> 
       {
         agreement.every(isAgreeClear) &&
-        <Button label={"동의완료"} clickEvent={handleAgree}/>
+        <Button label={"동의완료"} handleClick={handleAgree}/>
       }
     </div>
   );

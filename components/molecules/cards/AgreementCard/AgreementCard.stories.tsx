@@ -1,4 +1,4 @@
-import { DialogContext } from '@/utils/DialogContext';
+import { DialogContext } from '@/utils/Context';
 import { Meta, StoryFn } from '@storybook/react';
 import { useRef, useState } from 'react';
 import ValidateDialog from '../../dialogs/ValidateDialog/ValidateDialog';

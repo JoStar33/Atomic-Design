@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-export const DialogContext = createContext({
+export const Context = createContext({
   setDialog: (dialogText: string, isShow: boolean) => {}
 });
