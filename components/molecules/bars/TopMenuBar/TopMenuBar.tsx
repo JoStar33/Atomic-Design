@@ -13,6 +13,7 @@ const TopMenuBar = ({ menu }: Props) => {
           key={menuElement.id}
           icon={menuElement.icon}
           label={menuElement.label}
+          click={menuElement.click}
         />
       ))}
     </div>

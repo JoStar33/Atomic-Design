@@ -15,14 +15,17 @@ TopMenuBarTest.args = {
   menu: [{
     id: "1", 
     icon: <AiFillHome/>, 
-    label: "홈으로"
+    label: "홈으로",
+    click: () => {}
   }, {
     id: "2", 
     icon: <AiFillFolder/>, 
-    label: "파일조회"
+    label: "파일조회",
+    click: () => {}
   }, {
     id: "3",
     icon: <DiReact/>,
-    label: "리액트"
+    label: "리액트",
+    click: () => {}
   }]
 }
