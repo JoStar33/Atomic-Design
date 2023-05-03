@@ -13,7 +13,7 @@ const ValidateInput = ({label, value, handleChangeValue, type}: Props) => {
     <div>
       <label className={styles.validate_input_title}>{label}</label>
       <div>
-        <input className={styles.validate_input} type={type === "password" ? "password" : "text"} onChange={handleChangeValue}/>
+        <input role='validation-input' className={styles.validate_input} type={type === "password" ? "password" : "text"} onChange={handleChangeValue}/>
         <p className={styles.validate_text}>
           { 
             type === "password" && validatePassword(value)
