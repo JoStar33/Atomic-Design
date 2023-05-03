@@ -7,7 +7,7 @@ interface Props {
 
 const MinusButton = ({ minusController }: Props) => {
   return (
-    <button className={styles.minus_button} onClick={minusController}>
+    <button role='minus-button' className={styles.minus_button} onClick={minusController}>
       <AiOutlineArrowDown/>
     </button>
   );

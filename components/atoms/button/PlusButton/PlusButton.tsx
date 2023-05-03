@@ -7,7 +7,7 @@ interface Props {
 
 const PlusButton = ({plusController}: Props) => {
   return (
-    <button className={styles.plus_button} onClick={plusController}>
+    <button role='plus-button' className={styles.plus_button} onClick={plusController}>
       <AiOutlineArrowUp/>
     </button>
   );
