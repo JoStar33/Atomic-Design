@@ -12,7 +12,7 @@ const TableRow = ({row, rowClick}: Props) => {
     return Object.values(showedRow);
   }, [row]);
   return (
-    <tr onClick={rowClick} style={{cursor: rowClick ? "pointer" : "default"}}>
+    <tr role={`table-row-${row.id}`} onClick={rowClick} style={{cursor: rowClick ? "pointer" : "default"}}>
       {
         rowValues.map((rowElement) => 
           <td key={rowElement}>{rowElement}</td>
