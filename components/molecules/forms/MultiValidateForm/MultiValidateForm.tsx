@@ -1,11 +1,11 @@
-import FormInput from "@/components/atoms/inputs/FormInput/FormInput";
-import { FormData } from "@/types/form";
+import FormValidateInput from "@/components/atoms/inputs/FormValidateInput/FormValidateInput";
+import { FormValidateData } from "@/types/form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import styles from "./multiform.module.scss";
+import styles from "../MultiForm/multiform.module.scss";
 
 interface Props {
-  formModel: FormData[];
+  formModel: FormValidateData[];
 }
 
 const MultiForm = ({ formModel }: Props) => {
@@ -26,14 +26,18 @@ const MultiForm = ({ formModel }: Props) => {
         className={styles.multi_form_container}
       >
         {formModel.map((model) => (
-          <FormInput
-            key={model.name}
-            label={model.label}
-            id={model.name}
-            type={model.type}
-            placeholder={model.label}
-            register={register}
-          />
+          <>
+            <FormValidateInput             
+              key={model.name}
+              label={model.label}
+              id={model.name}
+              type={model.type}
+              placeholder={model.label}
+              register={register}
+              validate={model.validate}
+            />
+            {errors[model.name] ? <p className={styles.error_text}>{String(errors[model.name]?.message)}</p> : null}
+          </>
         ))}
         <button type="submit" disabled={isSubmitting}>
           등록
