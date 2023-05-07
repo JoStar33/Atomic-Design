@@ -23,13 +23,7 @@ const FormInput = ({ label, placeholder, type, id, register }: Props) => {
         type={type}
         placeholder={placeholder}
         className={styles.form_input}
-        {...register(id, {
-          required: "비밀번호는 필수 입력입니다.",
-          minLength: {
-            value: 8,
-            message: "8자리 이상 비밀번호를 사용하세요.",
-          },
-        })}
+        {...register(id)}
       />
     </div>
   );
