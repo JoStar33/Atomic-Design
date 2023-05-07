@@ -1,0 +1,15 @@
+.multi_form_container {
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 2px solid black;
+  button {
+    cursor: pointer;
+    border-radius: 20px;
+    width: 30vw;
+    font-size: 1.4rem;
+  }
+}
