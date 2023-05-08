@@ -21,7 +21,7 @@ const initStar: Star[] = [
   }
 ]
 
-const StarScoreForm = () => {
+const StarScoreController = () => {
   const [starScore, setStarScore] = useState<Star[]>(initStar);
   const setClikedStar = (star: Star) => {
     if(star.score === 0){
@@ -63,4 +63,4 @@ const StarScoreForm = () => {
   );
 };
 
-export default StarScoreForm;
+export default StarScoreController;
