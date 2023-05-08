@@ -8,7 +8,20 @@ interface Props {
   actionSubmit: (data: FormSubmitValue) => void;
   buttonText: string;
 }
-const MultiForm = ({ formModel, actionSubmit, buttonText }: Props) => {
+/*
+  required: '닉네임을 입력해주세요.',
+  // required: true,
+  // boolean값도 가능하지만 문자열 값을 주면, input의 value가 없을 때 해당 문자열이 errors 객체로 반환되어 에러 메세지로 표시할 수 있다.
+  minLength: { // value의 최소 길이
+    value: 3,
+    message: '3글자 이상 입력해주세요.', // 에러 메세지
+  },
+  pattern: { // input의 정규식 패턴
+    value: /^[A-za-z0-9가-힣]{3,10}$/,
+    message: '가능한 문자: 영문 대소문자, 글자 단위 한글, 숫자', // 에러 메세지
+  },
+*/
+const MultiValidateForm = ({ formModel, actionSubmit, buttonText }: Props) => {
   const {
     register,
     handleSubmit,
@@ -24,12 +37,8 @@ const MultiForm = ({ formModel, actionSubmit, buttonText }: Props) => {
           <>
             <FormValidateInput
               key={model.name}
-              label={model.label}
-              id={model.name}
-              type={model.type}
-              placeholder={model.label}
+              model={model}
               register={register}
-              validate={model.validate}
             />
             {errors[model.name] ? (
               <p className={styles.error_text}>
@@ -46,4 +55,4 @@ const MultiForm = ({ formModel, actionSubmit, buttonText }: Props) => {
   );
 };
 
-export default MultiForm;
+export default MultiValidateForm;

@@ -1,29 +1,27 @@
-import { UseFormRegister, FieldValues } from "react-hook-form";
-import styles from "../FormInput/forminput.module.scss"
+import { FormValidateData } from "@/types/form";
+import { FieldValues, UseFormRegister } from "react-hook-form";
+import styles from "../FormInput/forminput.module.scss";
 
 interface Props {
-  label: string;
-  id: string;
-  type: string;
-  placeholder: string;
+  model: FormValidateData;
   register: UseFormRegister<FieldValues>;
-  validate: object;
 }
 
-const FormValidateInput = ({ label, placeholder, type, id, register, validate }: Props) => {
+const FormValidateInput = ({ model, register }: Props) => {
   return (
     <div className={styles.form_container}>
       <div>
-        <label htmlFor={id} className={styles.form_input_title}>
-          {label}
+        <label htmlFor={model.name} className={styles.form_input_title}>
+          {model.label}
         </label>
       </div>
       <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
+        role={model.name}
+        id={model.name}
+        type={model.type}
+        placeholder={model.name}
         className={styles.form_input}
-        {...register(id, validate)}
+        {...register(model.name, model.validate)}
       />
     </div>
   );
