@@ -1,19 +1,19 @@
-interface FormData {
+interface FormModel {
   type: string;
   name: string;
   label: string;
 }
 
-interface FormValidateData {
+interface FormValidateModel {
   type: string;
   name: string;
   label: string;
   validate: object;
 }
 
-interface FormSubmitValue {
+interface SubmitValue {
   [key: string]: string;
 }
 
-export type { FormData, FormValidateData, FormSubmitValue };
+export type { FormModel, FormValidateModel, SubmitValue };
 

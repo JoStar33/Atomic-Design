@@ -1,11 +1,11 @@
 import FormValidateInput from "@/components/atoms/inputs/FormValidateInput/FormValidateInput";
-import { FormSubmitValue, FormValidateData } from "@/types/form";
+import { FormValidateModel, SubmitValue } from "@/types/form";
 import { useForm } from "react-hook-form";
 import styles from "./multi_validate_form.module.scss";
 
 interface Props {
-  formModel: FormValidateData[];
-  actionSubmit: (data: FormSubmitValue) => void;
+  formModel: FormValidateModel[];
+  actionSubmit: (data: SubmitValue) => void;
   buttonText: string;
 }
 /*

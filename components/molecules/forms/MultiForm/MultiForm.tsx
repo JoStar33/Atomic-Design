@@ -1,11 +1,11 @@
 import FormInput from "@/components/atoms/inputs/FormInput/FormInput";
-import { FormData, FormSubmitValue } from "@/types/form";
+import { FormModel, SubmitValue } from "@/types/form";
 import { useForm } from "react-hook-form";
 import styles from "./multiform.module.scss";
 
 interface Props {
-  formModel: FormData[];
-  actionSubmit: (data: FormSubmitValue) => void;
+  formModel: FormModel[];
+  actionSubmit: (data: SubmitValue) => void;
   buttonText: string;
 }
 
@@ -24,10 +24,7 @@ const MultiForm = ({ formModel, actionSubmit, buttonText }: Props) => {
         {formModel.map((model) => (
           <FormInput
             key={model.name}
-            label={model.label}
-            id={model.name}
-            type={model.type}
-            placeholder={model.label}
+            model={model}
             register={register}
           />
         ))}
