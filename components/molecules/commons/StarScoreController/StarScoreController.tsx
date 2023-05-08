@@ -1,6 +1,6 @@
 import Star from '@/components/atoms/commons/Star/Star';
 import { useState } from 'react';
-import styles from './star_score_form.module.scss';
+import styles from './star_score_controller.module.scss';
 
 const initStar: Star[] = [
   {

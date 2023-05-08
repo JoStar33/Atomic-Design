@@ -1,4 +1,4 @@
-import { DialogContext } from '@/utils/Context';
+import { Context } from '@/utils/Context';
 import { Meta, StoryFn } from '@storybook/react';
 import { useRef, useState } from 'react';
 import ValidateDialog from '../../dialogs/ValidateDialog/ValidateDialog';
@@ -16,10 +16,10 @@ const Template: StoryFn<typeof AgreementCard> = (args) => {
     dialogText.current = text;
   }
   return (
-    <DialogContext.Provider value={{setDialog}}>
+    <Context.Provider value={{setDialog}}>
       <ValidateDialog dialogShow={dialogShow} dialogText={dialogText.current} handleDialog={() => setDialogShow(false)}/>
       <AgreementCard {...args}/>
-    </DialogContext.Provider>
+    </Context.Provider>
   )
 }
 

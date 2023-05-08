@@ -1,4 +1,4 @@
-import { FormSubmitValue } from '@/types/form';
+import { SubmitValue } from '@/types/form';
 import { Meta, StoryFn } from '@storybook/react';
 import MultiForm from './MultiValidateForm';
 
@@ -55,7 +55,7 @@ MultiFormTest.args = {
       }
     }
   ],
-  actionSubmit: (data: FormSubmitValue) => {
+  actionSubmit: (data: SubmitValue) => {
     console.log(data);
     alert(JSON.stringify(data));
   },

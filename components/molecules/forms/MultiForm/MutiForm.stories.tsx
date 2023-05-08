@@ -1,4 +1,4 @@
-import { FormSubmitValue } from '@/types/form';
+import { SubmitValue } from '@/types/form';
 import { Meta, StoryFn } from '@storybook/react';
 import MultiForm from './MultiForm';
 
@@ -28,7 +28,7 @@ MultiFormTest.args = {
       label: "성명",
     }
   ],
-  actionSubmit: (data: FormSubmitValue) => {
+  actionSubmit: (data: SubmitValue) => {
     console.log(data);
     alert(JSON.stringify(data));
   },
