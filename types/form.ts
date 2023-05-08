@@ -11,4 +11,9 @@ interface FormValidateData {
   validate: object;
 }
 
-export type { FormData, FormValidateData };
+interface FormSubmitValue {
+  [key: string]: string;
+}
+
+export type { FormData, FormValidateData, FormSubmitValue };
+

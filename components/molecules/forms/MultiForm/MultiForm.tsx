@@ -1,28 +1,24 @@
 import FormInput from "@/components/atoms/inputs/FormInput/FormInput";
-import { FormData } from "@/types/form";
-import React from "react";
+import { FormData, FormSubmitValue } from "@/types/form";
 import { useForm } from "react-hook-form";
 import styles from "./multiform.module.scss";
 
 interface Props {
   formModel: FormData[];
+  actionSubmit: (data: FormSubmitValue) => void;
+  buttonText: string;
 }
 
-const MultiForm = ({ formModel }: Props) => {
+const MultiForm = ({ formModel, actionSubmit, buttonText }: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
   } = useForm();
-  const onSubmit = async (data: any) => {
-    await new Promise((r) => setTimeout(r, 1000));
-    console.log(data);
-    alert(JSON.stringify(data));
-  };
   return (
     <div>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(actionSubmit)}
         className={styles.multi_form_container}
       >
         {formModel.map((model) => (
@@ -36,7 +32,7 @@ const MultiForm = ({ formModel }: Props) => {
           />
         ))}
         <button type="submit" disabled={isSubmitting}>
-          등록
+          {buttonText}
         </button>
       </form>
     </div>

@@ -1,3 +1,4 @@
+import { FormSubmitValue } from '@/types/form';
 import { Meta, StoryFn } from '@storybook/react';
 import MultiForm from './MultiValidateForm';
 
@@ -5,6 +6,12 @@ export default {
   title: '컴포넌트/아토믹/폼/MultiValidateForm',
   component: MultiForm,
 } as Meta<typeof MultiForm>;
+
+interface FormModel {
+  email: string;
+  password: string;
+  name: string;
+}
 
 const Template: StoryFn<typeof MultiForm> = (args) => <MultiForm {...args}/>;
 
@@ -47,5 +54,10 @@ MultiFormTest.args = {
         },
       }
     }
-  ]
+  ],
+  actionSubmit: (data: FormSubmitValue) => {
+    console.log(data);
+    alert(JSON.stringify(data));
+  },
+  buttonText: "등록"
 }

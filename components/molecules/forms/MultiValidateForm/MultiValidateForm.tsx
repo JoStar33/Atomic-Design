@@ -1,33 +1,28 @@
 import FormValidateInput from "@/components/atoms/inputs/FormValidateInput/FormValidateInput";
-import { FormValidateData } from "@/types/form";
-import React from "react";
+import { FormSubmitValue, FormValidateData } from "@/types/form";
 import { useForm } from "react-hook-form";
-import styles from "../MultiForm/multiform.module.scss";
+import styles from "./multi_validate_form.module.scss";
 
 interface Props {
   formModel: FormValidateData[];
+  actionSubmit: (data: FormSubmitValue) => void;
+  buttonText: string;
 }
-
-const MultiForm = ({ formModel }: Props) => {
+const MultiForm = ({ formModel, actionSubmit, buttonText }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
   } = useForm();
-  const onSubmit = async (data: any) => {
-    await new Promise((r) => setTimeout(r, 1000));
-    console.log(data);
-    alert(JSON.stringify(data));
-  };
   return (
     <div>
       <form
-        onSubmit={handleSubmit(onSubmit)}
-        className={styles.multi_form_container}
+        onSubmit={handleSubmit(actionSubmit)}
+        className={styles.multi_validate_form_container}
       >
         {formModel.map((model) => (
           <>
-            <FormValidateInput             
+            <FormValidateInput
               key={model.name}
               label={model.label}
               id={model.name}
@@ -36,11 +31,15 @@ const MultiForm = ({ formModel }: Props) => {
               register={register}
               validate={model.validate}
             />
-            {errors[model.name] ? <p className={styles.error_text}>{String(errors[model.name]?.message)}</p> : null}
+            {errors[model.name] ? (
+              <p className={styles.error_text}>
+                {String(errors[model.name]?.message)}
+              </p>
+            ) : null}
           </>
         ))}
         <button type="submit" disabled={isSubmitting}>
-          등록
+          {buttonText}
         </button>
       </form>
     </div>
