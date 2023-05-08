@@ -68,6 +68,8 @@ describe("분자/폼/멀티 유효성 검사 폼", () => {
     await userEvent.type(emailInput, "naver.com");
     await userEvent.type(passwordInput, "1234qwer");
     return userEvent.click(loginButton).then(() => {
+      const validatePassword = screen.getByText(/최소 하나의 문자, 하나의 숫자, 하나의 특수문자가/);
+      expect(validatePassword).toBeInTheDocument();
       expect(completeWork).toBeFalsy();
     });
   })
