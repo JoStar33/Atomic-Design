@@ -51,7 +51,6 @@ const StarScoreController = () => {
       }
       return star;
     }));
-    console.log(starScore);
   }
   return (
     <div className={styles.star_score_form_container}>

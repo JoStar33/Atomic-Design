@@ -1,4 +1,4 @@
-import { FormSubmitValue } from "@/types/form";
+import { SubmitValue } from "@/types/form";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import MultiValidateForm from "./MultiValidateForm";
@@ -37,9 +37,9 @@ const formModel = [
 ];
 
 const initRender = () => {
-  render(<MultiValidateForm formModel={formModel} actionSubmit={function (data: FormSubmitValue): void {
+  render(<MultiValidateForm formModel={formModel} actionSubmit={(data: SubmitValue) => {
     completeWork = true;
-  } } buttonText={"로그인"}/>);
+  }} buttonText={"로그인"}/>);
   const loginButton = screen.getByText(/로그인/);
   const emailInput = screen.getByRole("email");
   const passwordInput = screen.getByRole("password");
