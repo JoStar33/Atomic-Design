@@ -10,11 +10,17 @@ const DragableContainer = <T extends DragList>({ initList }: Props<T>) => {
   const dragOverItem = useRef<number>(0);
   const [list, setList] = useState<T[]>(initList);
 
-  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, position: number) => {
+  const handleDragStart = (
+    e: React.DragEvent<HTMLDivElement>,
+    position: number
+  ) => {
     dragItem.current = position;
   };
 
-  const handleDragEnter = (e: React.DragEvent<HTMLDivElement>, position: number) => {
+  const handleDragEnter = (
+    e: React.DragEvent<HTMLDivElement>,
+    position: number
+  ) => {
     dragOverItem.current = position;
   };
 
@@ -30,24 +36,23 @@ const DragableContainer = <T extends DragList>({ initList }: Props<T>) => {
 
   return (
     <>
-      {list &&
-        list.map((item, index) => (
-          <div
-            style={{
-              backgroundColor: "lightblue",
-              margin: "20px 25%",
-              textAlign: "center",
-              fontSize: "40px",
-            }}
-            onDragStart={(e) => handleDragStart(e, index)}
-            onDragEnter={(e) => handleDragEnter(e, index)}
-            onDragEnd={handleDrop}
-            key={index}
-            draggable
-          >
-            {item.title}
-          </div>
-        ))}
+      {list.map((item, index) => (
+        <div
+          style={{
+            backgroundColor: "lightblue",
+            margin: "20px 25%",
+            textAlign: "center",
+            fontSize: "40px",
+          }}
+          onDragStart={(e) => handleDragStart(e, index)}
+          onDragEnter={(e) => handleDragEnter(e, index)}
+          onDragEnd={handleDrop}
+          key={index}
+          draggable
+        >
+          {item.title}
+        </div>
+      ))}
     </>
   );
 };
