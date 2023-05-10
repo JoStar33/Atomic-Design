@@ -1,5 +1,7 @@
+import DragableCard from "@/components/molecules/cards/DragableCard/DragableCard";
 import { DragList } from "@/types/list";
 import { useRef, useState } from "react";
+import styles from "./dragable_container.module.scss";
 
 interface Props<T> {
   initList: T[];
@@ -11,14 +13,12 @@ const DragableContainer = <T extends DragList>({ initList }: Props<T>) => {
   const [list, setList] = useState<T[]>(initList);
 
   const handleDragStart = (
-    e: React.DragEvent<HTMLDivElement>,
     position: number
   ) => {
     dragItem.current = position;
   };
 
   const handleDragEnter = (
-    e: React.DragEvent<HTMLDivElement>,
     position: number
   ) => {
     dragOverItem.current = position;
@@ -35,25 +35,17 @@ const DragableContainer = <T extends DragList>({ initList }: Props<T>) => {
   };
 
   return (
-    <>
+    <div className={styles.dragable_container}>
       {list.map((item, index) => (
-        <div
-          style={{
-            backgroundColor: "lightblue",
-            margin: "20px 25%",
-            textAlign: "center",
-            fontSize: "40px",
-          }}
-          onDragStart={(e) => handleDragStart(e, index)}
-          onDragEnter={(e) => handleDragEnter(e, index)}
-          onDragEnd={handleDrop}
+        <DragableCard
+          handleDragStart={() => handleDragStart(index)}
+          handleDragEnter={() => handleDragEnter(index)}
+          handleDrop={() => handleDrop()}
+          item={item}
           key={index}
-          draggable
-        >
-          {item.title}
-        </div>
+        />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import DragableContainer from "@/components/molecules/commons/DragableContainer/DragableContainer";
+import DragableContainer from "@/components/organizations/container/DragableContainer/DragableContainer";
 import { TestTodos } from "@/types/list";
 
 //프리렌더링이 정상적으로 이루어지고 있는지 테스트하기위한 파일.

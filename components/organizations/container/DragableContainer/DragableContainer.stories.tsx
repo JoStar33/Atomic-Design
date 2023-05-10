@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import DragableContainer from './DragableContainer';
 
 export default {
-  title: '컴포넌트/분자/일반/DragableContainer',
+  title: '컴포넌트/조직/컨테이너/DragableContainer',
   component: DragableContainer,
 } as Meta<typeof DragableContainer>;
 
