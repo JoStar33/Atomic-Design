@@ -4,7 +4,7 @@ import { DiReact } from 'react-icons/di';
 import TopMenuBar from './TopMenuBar';
 
 export default {
-  title: '컴포넌트/조직/바/TopMenuBar',
+  title: '컴포넌트/분자/바/TopMenuBar',
   component: TopMenuBar,
 } as Meta<typeof TopMenuBar>;
 

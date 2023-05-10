@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import DefaultTable from './DefaultTable';
 
 export default {
-  title: '컴포넌트/조직/테이블/DefaultTable',
+  title: '컴포넌트/분자/테이블/DefaultTable',
   component: DefaultTable,
 } as Meta<typeof DefaultTable>;
 

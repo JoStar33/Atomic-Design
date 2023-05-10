@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import StarScoreController from './StarScoreController';
 
 export default {
-  title: '컴포넌트/조직/일반/StarScoreController',
+  title: '컴포넌트/분자/일반/StarScoreController',
   component: StarScoreController,
 } as Meta<typeof StarScoreController>;
 

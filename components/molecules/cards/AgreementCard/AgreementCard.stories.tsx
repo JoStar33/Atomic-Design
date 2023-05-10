@@ -5,7 +5,7 @@ import ValidateDialog from '../../dialogs/ValidateDialog/ValidateDialog';
 import AgreementCard from './AgreementCard';
 
 export default {
-  title: '컴포넌트/조직/카드/AgreementCard',
+  title: '컴포넌트/분자/카드/AgreementCard',
   component: AgreementCard,
 } as Meta<typeof AgreementCard>;
 const Template: StoryFn<typeof AgreementCard> = (args) => {

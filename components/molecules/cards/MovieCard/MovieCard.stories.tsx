@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import MovieCard from './MovieCard';
 
 export default {
-  title: '컴포넌트/조직/카드/MovieCard',
+  title: '컴포넌트/분자/카드/MovieCard',
   component: MovieCard,
 } as Meta<typeof MovieCard>;
 
