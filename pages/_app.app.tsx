@@ -1,4 +1,5 @@
 import ValidateDialog from '@/components/molecules/dialogs/ValidateDialog/ValidateDialog';
+import { server } from '@/mocks/server';
 import { Context } from '@/utils/Context';
 import type { AppProps } from 'next/app';
 import { useRef, useState } from 'react';
@@ -10,6 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const setDialog = (text: string, isShow: boolean) => {
     setDialogShow(isShow);
     dialogText.current = text;
+  }
+  if(process.env.NODE_ENV === "development") {
+    server.listen({
+      onUnhandledRequest: "bypass",
+    });
   }
   return (
     <Context.Provider value={{setDialog}}>
