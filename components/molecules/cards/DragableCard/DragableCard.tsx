@@ -12,9 +12,9 @@ const DragableCard = <T extends DragList>({handleDrop, handleDragEnter, handleDr
   return (
     <div 
       className={styles.dragable_card}
-      onDragStart={() => handleDragStart()}
-      onDragEnter={() => handleDragEnter()}
-      onDragEnd={() => handleDrop()}
+      onDragStart={handleDragStart}
+      onDragEnter={handleDragEnter}
+      onDragEnd={handleDrop}
       draggable
     >
       {
