@@ -14,12 +14,16 @@ const TimerCard = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div ref={spinnerRef} className={`${styles.pie} ${styles.spinner}`}></div>
         {
+          (
+            <>
+              <div ref={spinnerRef} className={`${styles.pie} ${styles.spinner}`}></div>
+              <div className={`${styles.pie} ${styles.filler}`}></div>
+              <div className={styles.mask}></div>
+            </>
+          )
           //아이디어: 여기에 태그들을 쑤셔넣고 태그들이 버튼을 누를때에만 보이도록 구축하면 될듯.
         }
-        <div className={`${styles.pie} ${styles.filler}`}></div>
-        <div className={styles.mask}></div>
         <div className={styles.time_shower}></div>
       </div>
       <button onClick={startTimer}>타이머 시작하기</button>
