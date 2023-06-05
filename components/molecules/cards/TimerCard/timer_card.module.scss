@@ -1,0 +1,81 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 40px auto;
+  background: white;
+}
+.pie {
+  width: 50%;
+  height: 100%;
+  transform-origin: 100% 50%;
+  position: absolute;
+  background: #08C;
+  z-index: 1;
+}
+
+.time_shower {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: white;
+  z-index: 3;
+}
+
+.spinner {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  z-index: 200;
+  border-right: none;
+  //animation: rota 5 + s linear;
+  z-index: 1;
+}
+
+@keyframes rota {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes opa {
+  0% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.filler {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0; 
+  left: 50%;
+  opacity: 0;
+  z-index: 2;
+  //animation: opa 5 + s steps(1, end) reverse;
+  border-left: none;
+}
+
+.mask {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  opacity: 1;
+  z-index: 300;
+  //animation: opa 5 + s steps(1, end);
+}
+.mask_animation {
+  animation: opa 5 + s steps(1, end);
+}
+
+:hover .spinner,
+:hover .filler, 
+:hover .mask {
+  animation-play-state: running;    
+}
