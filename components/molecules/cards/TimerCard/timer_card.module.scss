@@ -1,6 +1,6 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -22,7 +22,20 @@
   z-index: 1;
 }
 
+.time_over {
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  background: #08C;
+  position: relative;
+}
+
 .time_shower {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 800;
   position: absolute;
   width: 350px;
   height: 350px;
@@ -38,7 +51,7 @@
   border-radius: 100% 0 0 100% / 50% 0 0 50%;
   z-index: 200;
   border-right: none;
-  //animation: rota 5 + s linear;
+  animation: rota 60s linear;
   z-index: 1;
 }
 
@@ -57,7 +70,7 @@
   left: 50%;
   opacity: 0;
   z-index: 2;
-  //animation: opa 5 + s steps(1, end) reverse;
+  animation: opa 60s steps(1, end) reverse;
   border-left: none;
 }
 
@@ -67,11 +80,8 @@
   position: absolute;
   background: inherit;
   opacity: 1;
-  z-index: 300;
-  //animation: opa 5 + s steps(1, end);
-}
-.mask_animation {
-  animation: opa 5 + s steps(1, end);
+  z-index: 2;
+  animation: opa 60s steps(1, end);
 }
 
 :hover .spinner,
