@@ -1,0 +1,16 @@
+@import '@/styles/mixins.scss';
+
+.search_input {
+  @include input;
+}
+
+.search_button {
+  @include button;
+  background-color: aqua;
+  color: black;
+}
+
+.search_container {
+  @include center;
+  flex-direction: row;
+}

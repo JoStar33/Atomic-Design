@@ -2,7 +2,11 @@ import '!style-loader!css-loader!sass-loader!../styles/globals.scss';
 import '!style-loader!css-loader!sass-loader!../styles/mixins.scss';
 import type { Preview } from "@storybook/react";
 import { setupWorker } from "msw";
+import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { handlers } from "../mocks/handlers";
+
+const queryClient = new QueryClient();
 
 if (typeof global.process === "undefined") {
   //checks to make sure that this is not a node process
@@ -13,6 +17,13 @@ if (typeof global.process === "undefined") {
   worker.start(); // worker starts!
 }
 
+export const decorators = [
+  (Story) => (
+    <QueryClientProvider client={queryClient}>
+      <Story />
+    </QueryClientProvider>
+  ),
+]
 
 const preview: Preview = {
   parameters: {

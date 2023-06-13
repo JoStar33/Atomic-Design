@@ -1,0 +1,31 @@
+@import '@/styles/mixins.scss';
+
+.row_container {
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 6px 6px 0 gray;
+  width: 90vw;
+  height: 100px;
+  margin: 20px;
+  background-color: white;
+  flex-direction: row;
+}
+
+.card_image {
+  width: 80px;
+  height: 80px;
+  margin-right: 40px;
+}
+
+.card_description {
+  height: 100%;
+  @include center;
+  flex-direction: column;
+}
+
+.card_text {
+  color: black;
+  margin: 10px;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
