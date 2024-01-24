@@ -1,8 +1,8 @@
-import React, { HTMLAttributes } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "./usericon.module.scss";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   image: string;
   iconClick: () => void;
 }

@@ -11,11 +11,9 @@ describe("아토믹/일반/CheckBox 테스트", () => {
       isChecked = value;
     };
     render(
-      <CheckBox
-        id={"3"}
-        isChecked={handleChange}
-        label={"체크박스 테스트"}
-      />
+      <CheckBox id={"3"} isChecked={handleChange}>
+        체크박스 테스트
+      </CheckBox>
     );
     const testCheckBox = screen.getByText(/체크박스 테스트/);
     user.click(testCheckBox).then(() => {

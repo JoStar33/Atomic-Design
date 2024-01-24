@@ -1,8 +1,7 @@
-import { HTMLAttributes } from "react";
 import styles from "./textbox.module.scss";
 import React from "react";
 
-interface Props extends HTMLAttributes<HTMLParagraphElement> {
+interface Props extends React.HTMLAttributes<HTMLParagraphElement> {
   children: React.ReactNode;
   textColor?: string;
 }

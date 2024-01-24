@@ -1,8 +1,7 @@
-import { HTMLAttributes } from "react";
 import styles from "./input.module.scss";
 import React from "react";
 
-interface Props extends HTMLAttributes<HTMLInputElement> {
+interface Props extends React.HTMLAttributes<HTMLInputElement> {
   children: React.ReactNode;
   isPassword?: boolean;
   placeholder: string;
