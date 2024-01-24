@@ -1,33 +1,32 @@
-import { RefObject } from 'react';
-import styles from './input.module.scss';
+import { HTMLAttributes } from "react";
+import styles from "./input.module.scss";
+import React from "react";
 
-interface Props {
-  label: string;
+interface Props extends HTMLAttributes<HTMLInputElement> {
+  children: React.ReactNode;
   isPassword?: boolean;
   placeholder: string;
-  valueRef: RefObject<HTMLInputElement>;
 }
 
-const Input = ({isPassword = false, label, placeholder, valueRef }: Props) => {
+export default React.forwardRef(function Input(
+  { isPassword = false, children, placeholder, ...rest }: Props,
+  ref: React.Ref<HTMLInputElement>
+) {
   return (
     <div>
-      <label
-        htmlFor="input"
-        className={styles.input_title}
-      >
-        {label}
+      <label htmlFor="input" className={styles.input_title}>
+        {children}
       </label>
       <div>
         <input
           id="input"
-          ref={valueRef}
+          ref={ref}
           type={isPassword ? "password" : "text"}
           placeholder={placeholder}
           className={styles.input}
+          {...rest}
         />
       </div>
     </div>
   );
-};
-
-export default Input;
+});

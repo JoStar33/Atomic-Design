@@ -1,10 +1,12 @@
 import { Card } from "./card";
 
 interface GettedMovieData {
-  movie_count: number;
-  limit: number;
-  page_number: number;
-  movies: Movie[];
+  data: {
+    movie_count: number;
+    limit: number;
+    page_number: number;
+    movies: Movie[];
+  };
 }
 
 interface Movie extends Card {
@@ -37,4 +39,3 @@ interface Movie extends Card {
 }
 
 export type { GettedMovieData, Movie };
-

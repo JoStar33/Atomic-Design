@@ -2,25 +2,24 @@ import DragableCard from "@/components/molecules/cards/DragableCard/DragableCard
 import { DragList } from "@/types/list";
 import { useRef, useState } from "react";
 import styles from "./dragable_container.module.scss";
+import React from "react";
 
 interface Props<T> {
   initList: T[];
 }
 
-const DragableContainer = <T extends DragList>({ initList }: Props<T>) => {
+export default function DragableContainer<T extends DragList>({
+  initList,
+}: Props<T>) {
   const dragItem = useRef<number>(0);
   const dragOverItem = useRef<number>(0);
   const [list, setList] = useState<T[]>(initList);
 
-  const handleDragStart = (
-    position: number
-  ) => {
+  const handleDragStart = (position: number) => {
     dragItem.current = position;
   };
 
-  const handleDragEnter = (
-    position: number
-  ) => {
+  const handleDragEnter = (position: number) => {
     dragOverItem.current = position;
   };
 
@@ -47,6 +46,4 @@ const DragableContainer = <T extends DragList>({ initList }: Props<T>) => {
       ))}
     </div>
   );
-};
-
-export default DragableContainer;
+}

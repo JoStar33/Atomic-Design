@@ -17,7 +17,7 @@ const MoviePage = () => {
     <div className={styles.container}>
       <SearchInput inputRef={inputRef} handleClick={handleSearch} />
       <div className={styles.card_container}>
-        {data?.movies.map((movie, _id) => (
+        {data?.data.movies.map((movie, _id) => (
           <CommonRowCard
             key={_id}
             image={movie.medium_cover_image}

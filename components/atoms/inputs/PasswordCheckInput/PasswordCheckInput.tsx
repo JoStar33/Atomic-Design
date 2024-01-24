@@ -1,27 +1,35 @@
-import { validatePasswordCheck } from '@/utils/validate';
-import styles from './password_check_input.module.scss';
+import { validatePasswordCheck } from "@/utils/validate";
+import styles from "./password_check_input.module.scss";
+import React, { HTMLAttributes } from "react";
 
-interface Props {
-  label: string;
+interface Props extends HTMLAttributes<HTMLInputElement> {
+  children: React.ReactNode;
   value: string;
   checkValue: string;
-  handleChangeValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChangeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const PasswordCheckInput = ({label, value, checkValue, handleChangeValue}: Props) => {
+export default React.forwardRef(function PasswordCheckInput({
+  children,
+  value,
+  checkValue,
+  handleChangeValue,
+  ...rest
+}: Props) {
   return (
     <div>
-      <label className={styles.password_check_input_title}>{label}</label>
+      <label className={styles.password_check_input_title}>{children}</label>
       <div>
-        <input className={styles.password_check_input} type="password" onChange={handleChangeValue}/>
+        <input
+          className={styles.password_check_input}
+          type="password"
+          onChange={handleChangeValue}
+          {...rest}
+        />
         <p className={styles.password_check_text}>
-          {
-            validatePasswordCheck(value, checkValue)
-          }
+          {validatePasswordCheck(value, checkValue)}
         </p>
       </div>
     </div>
   );
-};
-
-export default PasswordCheckInput;
+});
