@@ -1,23 +1,28 @@
 import Image, { StaticImageData } from "next/image";
-import styles from './logobutton.module.scss';
+import styles from "./logobutton.module.scss";
+import React from "react";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   handleClick: () => void;
-  label: string;
+  children: React.ReactNode;
   logo: StaticImageData;
 }
 
-const LogoButton = ({logo, label, handleClick}: Props) => {
+export default React.forwardRef(function LogoButton(
+  { logo, children, handleClick, ...rest }: Props,
+  ref: React.Ref<HTMLButtonElement>
+) {
   return (
-    <button className={styles.logobutton} onClick={handleClick}>
+    <button
+      ref={ref}
+      className={styles.logobutton}
+      onClick={handleClick}
+      {...rest}
+    >
       <figure>
-        <Image src={logo} alt={''} fill style={{objectFit: "cover"}}/>
+        <Image src={logo} alt={""} fill style={{ objectFit: "cover" }} />
       </figure>
-      {
-        label
-      }
+      {children}
     </button>
   );
-};
-
-export default LogoButton;
+});

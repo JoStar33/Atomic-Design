@@ -2,34 +2,25 @@ import * as icons from '@/assets/icons/index';
 import { colors } from '@/styles/theme/theme';
 import { SVGAttributes } from 'react';
 
-export type IconType = keyof typeof icons;
-export const iconTypes: IconType[] = Object.keys(icons) as IconType[];
-
-export type ColorType = keyof typeof colors;
-export const colorTypes: ColorType[] = Object.keys(
-  colors
-) as ColorType[];
-
 export interface IconProps extends SVGAttributes<SVGElement> {
-  icon: IconType;
+  icon: keyof typeof icons;
   size?: number;
-  themeColor?: ColorType;
+  themeColor?: keyof typeof colors;
 }
 
 const Icon = ({
   icon,
   size,
-  themeColor,
+  themeColor = "CYAN9",
   ...props
 }: IconProps) => {
   const SVGIcon = icons[icon];
-  const color = themeColor ? colors[themeColor] : undefined;
 
   return (
     <SVGIcon
       width={size}
       height={size}
-      fill={color}
+      fill={colors[themeColor]}
       {...props}
     />
   );

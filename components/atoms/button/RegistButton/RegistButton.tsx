@@ -1,20 +1,25 @@
-import { BsPlusCircle } from 'react-icons/bs';
-import styles from './registbutton.module.scss';
+import { BsPlusCircle } from "react-icons/bs";
+import styles from "./registbutton.module.scss";
+import React from "react";
 
-interface Props {
-  text: string;
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
   handleClick: () => void;
-} 
+}
 
-const RegistButton = ({text, handleClick}: Props) => {
+export default React.forwardRef(function RegistButton(
+  { children, handleClick, ...rest }: Props,
+  ref: React.Ref<HTMLButtonElement>
+) {
   return (
-    <button className={styles.regist_button} onClick={handleClick}>
-      <BsPlusCircle/>
-      {
-        text
-      }
+    <button
+      ref={ref}
+      className={styles.regist_button}
+      onClick={handleClick}
+      {...rest}
+    >
+      <BsPlusCircle />
+      {children}
     </button>
   );
-};
-
-export default RegistButton;
+});

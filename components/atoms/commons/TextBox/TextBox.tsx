@@ -1,18 +1,24 @@
-import styles from './textbox.module.scss';
+import { HTMLAttributes } from "react";
+import styles from "./textbox.module.scss";
+import React from "react";
 
-interface Props {
-  text: string;
+interface Props extends HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
   textColor?: string;
 }
 
-const TextBox = ({text, textColor = 'black'}: Props) => {
+export default React.forwardRef(function TextBox(
+  { children, textColor = "black", ...rest }: Props,
+  ref: React.Ref<HTMLParagraphElement>
+) {
   return (
-    <div className={styles.textbox} style={{color: textColor}}>
-      {
-        text
-      }
-    </div>
+    <p
+      ref={ref}
+      className={styles.textbox}
+      style={{ color: textColor }}
+      {...rest}
+    >
+      {children}
+    </p>
   );
-};
-
-export default TextBox;
+});

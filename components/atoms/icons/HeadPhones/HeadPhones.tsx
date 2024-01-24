@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './headphones.module.scss';
+import React from "react";
+import styles from "./headphones.module.scss";
 
-const HeadPhones = () => {
+export default function HeadPhones() {
   return (
     <div className={styles.headphones}>
       <div className={styles.headphone_main}>
@@ -19,6 +19,4 @@ const HeadPhones = () => {
       </div>
     </div>
   );
-};
-
-export default HeadPhones;
+}

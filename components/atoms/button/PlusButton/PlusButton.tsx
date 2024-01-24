@@ -1,16 +1,24 @@
-import { AiOutlineArrowUp } from 'react-icons/ai';
-import styles from './plusbutton.module.scss';
+import { AiOutlineArrowUp } from "react-icons/ai";
+import styles from "./plusbutton.module.scss";
+import React from "react";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   handleClick: () => void;
 }
 
-const PlusButton = ({handleClick}: Props) => {
+export default React.forwardRef(function PlusButton(
+  { handleClick, ...rest }: Props,
+  ref: React.Ref<HTMLButtonElement>
+) {
   return (
-    <button role='plus-button' className={styles.plus_button} onClick={handleClick}>
-      <AiOutlineArrowUp/>
+    <button
+      ref={ref}
+      role="plus-button"
+      className={styles.plus_button}
+      onClick={handleClick}
+      {...rest}
+    >
+      <AiOutlineArrowUp />
     </button>
   );
-};
-
-export default PlusButton;
+});

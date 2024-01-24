@@ -1,18 +1,18 @@
+import React from "react";
 import styles from "./button.module.scss";
 
-interface Props {
-  label: string;
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
   handleClick: () => void;
 }
 
-const Button = ({label, handleClick}: Props) => {
+export default React.forwardRef(function Button(
+  { children, handleClick, ...rest }: Props,
+  ref: React.Ref<HTMLButtonElement>
+) {
   return (
-    <button className={styles.button} onClick={handleClick}>
-      {
-        label
-      }
+    <button ref={ref} className={styles.button} onClick={handleClick} {...rest}>
+      {children}
     </button>
   );
-};
-
-export default Button;
+});

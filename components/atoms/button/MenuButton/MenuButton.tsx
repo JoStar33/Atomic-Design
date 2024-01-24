@@ -1,18 +1,23 @@
+import React from "react";
 import styles from "./menubutton.module.scss";
 
-interface Props {
-  icon: React.ReactNode;
-  label: string;
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
   handleClick: () => void;
 }
 
-const MenuButton = ({ icon, label, handleClick }: Props) => {
+export default React.forwardRef(function MenuButton(
+  { children, handleClick, ...rest }: Props,
+  ref: React.Ref<HTMLDivElement>
+) {
   return (
-    <div className={styles.menu_button} onClick={handleClick}>
-      {icon}
-      {label}
+    <div
+      ref={ref}
+      className={styles.menu_button}
+      onClick={handleClick}
+      {...rest}
+    >
+      {children}
     </div>
   );
-};
-
-export default MenuButton;
+});

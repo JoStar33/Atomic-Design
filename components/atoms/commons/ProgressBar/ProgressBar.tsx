@@ -1,17 +1,22 @@
-import styles from './progressbar.module.scss';
+import React from "react";
+import styles from "./progressbar.module.scss";
 
-interface Props {
-  value: string;
-  label: string;
+interface Props extends React.HTMLAttributes<HTMLProgressElement> {
+  children: React.ReactNode;
+  labelStyle?: React.CSSProperties;
+  value: number;
 }
 
-const ProgressBar = ({value, label}: Props) => {
+export default React.forwardRef(function ProgressBar({
+  value,
+  labelStyle,
+  children,
+  ...rest
+}: Props) {
   return (
     <div>
-      <h2>{label}</h2>
-      <progress id={styles.progress} value={value} max="100"/>
+      <h2 style={labelStyle}>{children}</h2>
+      <progress id={styles.progress} value={value} max="100" {...rest} />
     </div>
   );
-};
-
-export default ProgressBar;
+});
