@@ -1,11 +1,11 @@
 import SearchInput from "@/components/atoms/inputs/SearchInput/SearchInput";
 import CommonRowCard from "@/components/molecules/cards/CommonRowCard/CommonRowCard";
 import { useMovieQuery } from "@/hooks/movies/useMovieQuery";
-import { useRef } from "react";
 import styles from "./moviepage.module.scss";
+import React from "react";
 
 const MoviePage = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
   const { data, refetch } = useMovieQuery(() => {
     if (!inputRef.current) return "";
     return inputRef.current.value;

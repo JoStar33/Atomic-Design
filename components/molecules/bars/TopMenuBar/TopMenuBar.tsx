@@ -1,23 +1,19 @@
 import MenuButton from "@/components/atoms/button/MenuButton/MenuButton";
-import styles from './topmenubar.module.scss';
+import styles from "./topmenubar.module.scss";
 
 interface Props {
   menu: Menu[];
 }
 
-const TopMenuBar = ({ menu }: Props) => {
+export default function TopMenuBar({ menu }: Props) {
   return (
     <div className={styles.top_menu_bar}>
       {menu.map((menuElement) => (
-        <MenuButton
-          key={menuElement.id}
-          icon={menuElement.icon}
-          label={menuElement.label}
-          handleClick={menuElement.click}
-        />
+        <MenuButton key={menuElement.id} handleClick={menuElement.click}>
+          {menuElement.icon}
+          {menuElement.label}
+        </MenuButton>
       ))}
     </div>
   );
-};
-
-export default TopMenuBar;
+}

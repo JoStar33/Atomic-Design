@@ -1,19 +1,20 @@
 import DragableCard from "@/components/molecules/cards/DragableCard/DragableCard";
 import { DragList } from "@/types/list";
-import { useRef, useState } from "react";
 import styles from "./dragable_container.module.scss";
 import React from "react";
 
 interface Props<T> {
   initList: T[];
+  isHorizontal: boolean;
 }
 
 export default function DragableContainer<T extends DragList>({
   initList,
+  isHorizontal,
 }: Props<T>) {
-  const dragItem = useRef<number>(0);
-  const dragOverItem = useRef<number>(0);
-  const [list, setList] = useState<T[]>(initList);
+  const dragItem = React.useRef(0);
+  const dragOverItem = React.useRef(0);
+  const [list, setList] = React.useState<T[]>(initList);
 
   const handleDragStart = (position: number) => {
     dragItem.current = position;
@@ -34,9 +35,12 @@ export default function DragableContainer<T extends DragList>({
   };
 
   return (
-    <div className={styles.dragable_container}>
+    <div
+      className={styles.dragable_container}
+      style={{ flexDirection: isHorizontal ? "column" : "row" }}
+    >
       {list.map((item, index) => (
-        <DragableCard
+        <DragableCard<T>
           handleDragStart={() => handleDragStart(index)}
           handleDragEnter={() => handleDragEnter(index)}
           handleDrop={() => handleDrop()}

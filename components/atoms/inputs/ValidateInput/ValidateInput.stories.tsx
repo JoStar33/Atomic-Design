@@ -1,30 +1,35 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { useState } from 'react';
-import ValidateInput from './ValidateInput';
+import { Meta, StoryFn } from "@storybook/react";
+import { useState } from "react";
+import ValidateInput from "./ValidateInput";
+import React from "react";
 
 export default {
-  title: '컴포넌트/아토믹/인풋/ValidateInput',
+  title: "컴포넌트/아토믹/인풋/ValidateInput",
   component: ValidateInput,
 } as Meta<typeof ValidateInput>;
 
-const Template: StoryFn<typeof ValidateInput> = (args) => 
-{
-  const [value, setValue] = useState<string>("");
+const Template: StoryFn<typeof ValidateInput> = (args) => {
+  const [value, setValue] = React.useState("");
 
   const handleChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-  }
-  return <ValidateInput {...args} value={value} handleChangeValue={handleChangeValue}/>;
-}
-
+  };
+  return (
+    <ValidateInput
+      {...args}
+      value={value}
+      handleChangeValue={handleChangeValue}
+    />
+  );
+};
 
 export const PasswordValidateInputTest = Template.bind({});
 PasswordValidateInputTest.args = {
   label: "비밀번호",
-  type: "password"
-}
+  type: "password",
+};
 export const EmailValidateInputTest = Template.bind({});
 EmailValidateInputTest.args = {
   label: "이메일",
-  type: "email"
-}
+  type: "email",
+};

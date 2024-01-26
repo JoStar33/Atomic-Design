@@ -9,10 +9,15 @@ interface Props {
   type: string;
   label: string;
   value: string;
-  handleChangeValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChangeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const ValidateInput = ({ label, value, handleChangeValue, type }: Props) => {
+export default function ValidateInput({
+  label,
+  value,
+  handleChangeValue,
+  type,
+}: Props) {
   return (
     <div>
       <label className={styles.validate_input_title}>{label}</label>
@@ -31,6 +36,4 @@ const ValidateInput = ({ label, value, handleChangeValue, type }: Props) => {
       </div>
     </div>
   );
-};
-
-export default ValidateInput;
+}

@@ -8,13 +8,13 @@ interface Props {
   rowClick?: (id: string) => void;
 }
 
-const DefaultTable = ({
+export default function DefaultTable({
   tableTitle,
   tableData,
   rowClick = () => {
     return;
   },
-}: Props) => {
+}: Props) {
   return (
     <div>
       <table className={styles.default_table}>
@@ -34,6 +34,4 @@ const DefaultTable = ({
       </table>
     </div>
   );
-};
-
-export default DefaultTable;
+}

@@ -1,26 +1,25 @@
 import Button from "@/components/atoms/button/Button/Button";
 import CheckBox from "@/components/atoms/commons/CheckBox/CheckBox";
 import { Context } from "@/utils/Context";
-import { useContext, useState } from "react";
 import styles from "./agreement_card.module.scss";
+import React from "react";
 
 interface Props {
   initAgreement: Agreement[];
 }
 
-const AgreementCard = ({ initAgreement }: Props) => {
-  const { setDialog } = useContext(Context);
-  const [agreement, setAgreement] = useState<Agreement[]>(initAgreement);
+export default function AgreementCard({ initAgreement }: Props) {
+  const { setDialog } = React.useContext(Context);
+  const [agreement, setAgreement] = React.useState<Agreement[]>(initAgreement);
   const isChecked = (value: boolean, id: string) => {
-    setAgreement(
-      agreement.map((agreeElement) => {
-        if (agreeElement.id === id) {
-          agreeElement.agree = value;
-          return agreeElement;
-        }
+    const computedAgreement = agreement.map((agreeElement) => {
+      if (agreeElement.id === id) {
+        agreeElement.agree = value;
         return agreeElement;
-      })
-    );
+      }
+      return agreeElement;
+    });
+    setAgreement(computedAgreement);
   };
   const isAgreeClear = (agreeElement: Agreement) => agreeElement.agree;
   const handleAgree = () => {
@@ -32,10 +31,11 @@ const AgreementCard = ({ initAgreement }: Props) => {
         {agreement.map((agreeElement) => (
           <CheckBox
             id={agreeElement.id}
-            label={agreeElement.label}
             key={agreeElement.id}
             isChecked={(value: boolean) => isChecked(value, agreeElement.id)}
-          />
+          >
+            {agreeElement.label}
+          </CheckBox>
         ))}
       </div>
       {agreement.every(isAgreeClear) && (
@@ -43,6 +43,4 @@ const AgreementCard = ({ initAgreement }: Props) => {
       )}
     </div>
   );
-};
-
-export default AgreementCard;
+}

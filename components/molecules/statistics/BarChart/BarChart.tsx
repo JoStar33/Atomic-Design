@@ -1,9 +1,9 @@
 import { ChartModel } from "@/types/statistics";
 import makeChartDataForm from "@/utils/makeChartDataForm";
 import { randomBrightColor } from "@/utils/randomBrightColor";
-import 'chart.js/auto';
+import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import styles from './barchart.module.scss';
+import styles from "./barchart.module.scss";
 
 interface Props {
   barChart: ChartModel[];
@@ -11,9 +11,11 @@ interface Props {
 }
 
 const BarChart = ({ barChart, chartTitle }: Props) => {
-  const chartData = makeChartDataForm(barChart, chartTitle, [randomBrightColor()]);
+  const chartData = makeChartDataForm(barChart, chartTitle, [
+    randomBrightColor(),
+  ]);
   const options = {
-    indexAxis: 'y' as const,
+    indexAxis: "y" as const,
     elements: {
       bar: {
         borderWidth: 2,
@@ -22,13 +24,13 @@ const BarChart = ({ barChart, chartTitle }: Props) => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'right' as const,
+        position: "right" as const,
       },
     },
   };
   return (
     <div className={styles.chart_container}>
-      <Bar data={chartData} options={options}/>
+      <Bar data={chartData} options={options} />
     </div>
   );
 };

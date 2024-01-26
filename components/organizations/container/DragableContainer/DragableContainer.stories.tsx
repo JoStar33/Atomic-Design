@@ -27,6 +27,7 @@ const Template: StoryFn<typeof DragableContainer> = () => (
         description: "안녕?",
       },
     ]}
+    isHorizontal={false}
   />
 );
 
