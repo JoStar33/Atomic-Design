@@ -1,14 +1,14 @@
-import { useEffect, useRef } from 'react';
+import React from "react";
 
 const useInterval = (callback: () => void, delay: number, timerOn: boolean) => {
-  const savedCallback = useRef<Function>(() => {});
+  const savedCallback = React.useRef<Function>(() => {});
 
-  useEffect(() => {
+  React.useEffect(() => {
     savedCallback.current = callback;
   }, [callback]);
 
-  useEffect(() => {
-    if(timerOn) {
+  React.useEffect(() => {
+    if (timerOn) {
       const executeCallback = () => {
         savedCallback.current();
       };

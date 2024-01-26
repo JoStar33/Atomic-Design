@@ -1,10 +1,9 @@
-import '!style-loader!css-loader!sass-loader!../styles/globals.scss';
-import '!style-loader!css-loader!sass-loader!../styles/mixins.scss';
 import type { Preview } from "@storybook/react";
 import { setupWorker } from "msw";
-import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { handlers } from "../mocks/handlers";
+import Theme from "../styles/Theme";
 
 const queryClient = new QueryClient();
 
@@ -19,11 +18,13 @@ if (typeof global.process === "undefined") {
 
 export const decorators = [
   (Story) => (
-    <QueryClientProvider client={queryClient}>
-      <Story />
-    </QueryClientProvider>
+    <Theme>
+      <QueryClientProvider client={queryClient}>
+        <Story />
+      </QueryClientProvider>
+    </Theme>
   ),
-]
+];
 
 const preview: Preview = {
   parameters: {

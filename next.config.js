@@ -15,6 +15,9 @@ const nextConfig = {
     locales: ["ko", "en"],
     defaultLocale: "ko",
   },
+  compiler: {
+    styledComponents: true,
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
