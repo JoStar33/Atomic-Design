@@ -6,11 +6,13 @@ import React from "react";
 interface Props<T> {
   initList: T[];
   isHorizontal: boolean;
+  childStyle?: React.CSSProperties;
 }
 
 export default function DragableContainer<T extends DragList>({
   initList,
   isHorizontal,
+  childStyle,
 }: Props<T>) {
   const dragItem = React.useRef(0);
   const dragOverItem = React.useRef(0);
@@ -41,6 +43,7 @@ export default function DragableContainer<T extends DragList>({
     >
       {list.map((item, index) => (
         <DragableCard<T>
+          style={childStyle}
           handleDragStart={() => handleDragStart(index)}
           handleDragEnter={() => handleDragEnter(index)}
           handleDrop={() => handleDrop()}

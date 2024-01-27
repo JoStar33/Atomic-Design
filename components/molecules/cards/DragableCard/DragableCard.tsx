@@ -1,7 +1,7 @@
 import { DragList } from "@/types/list";
 import styles from "./dragable_card.module.scss";
 
-interface Props<T> {
+interface Props<T> extends React.HTMLAttributes<HTMLDivElement> {
   handleDragStart: () => void;
   handleDragEnter: () => void;
   handleDrop: () => void;
@@ -13,6 +13,7 @@ export default function DragableCard<T extends DragList>({
   handleDragEnter,
   handleDragStart,
   item,
+  ...rest
 }: Props<T>) {
   return (
     <div
@@ -24,6 +25,7 @@ export default function DragableCard<T extends DragList>({
         event.preventDefault();
       }}
       draggable
+      {...rest}
     >
       {item.title}
     </div>
