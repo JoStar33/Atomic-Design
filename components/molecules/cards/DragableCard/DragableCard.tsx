@@ -4,12 +4,12 @@ import styles from "./dragable_card.module.scss";
 interface Props<T> extends React.HTMLAttributes<HTMLDivElement> {
   handleDragStart: () => void;
   handleDragEnter: () => void;
-  handleDrop: () => void;
+  handleDragEnd: () => void;
   item: T;
 }
 
 export default function DragableCard<T extends DragList>({
-  handleDrop,
+  handleDragEnd,
   handleDragEnter,
   handleDragStart,
   item,
@@ -20,7 +20,7 @@ export default function DragableCard<T extends DragList>({
       className={styles.dragable_card}
       onDragStart={handleDragStart}
       onDragEnter={handleDragEnter}
-      onDragEnd={handleDrop}
+      onDragEnd={handleDragEnd}
       onDragOver={(event) => {
         event.preventDefault();
       }}

@@ -26,7 +26,7 @@ export default function DragableContainer<T extends DragList>({
     dragOverItem.current = position;
   };
 
-  const handleDrop = () => {
+  const handleDragEnd = () => {
     const copyListItems = [...list];
     const dragItemContent = copyListItems[dragItem.current];
     copyListItems.splice(dragItem.current, 1);
@@ -46,7 +46,7 @@ export default function DragableContainer<T extends DragList>({
           style={childStyle}
           handleDragStart={() => handleDragStart(index)}
           handleDragEnter={() => handleDragEnter(index)}
-          handleDrop={() => handleDrop()}
+          handleDragEnd={() => handleDragEnd()}
           item={item}
           key={index}
         />
